@@ -1,0 +1,25 @@
+<header>
+  <nav>
+    <h1>Game of Advisor</h1>
+    <ul>
+      <li>
+        <a [routerLink]="['/home']">Dashboard</a>
+      </li>
+      <li>
+        <a [routerLink]="['/matching']">Matching</a>
+      </li>
+      <li>
+        <a [routerLink]="['/betreuer']">Betreuer</a>
+      </li>
+      <li>
+        <a [routerLink]="['/admin']">Admin</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main class="border-r">
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <p>Made with love by Timo</p>
+</footer>

@@ -1,0 +1,45 @@
+<div id="matching-component-container" class="border-b">
+  <section id="matching-form-section" class="border-g">
+    <form id="matching-form" [formGroup]="matchingForm" (ngSubmit)="postMatchRequest()">
+      <div class="mb-5">
+        <h2>Betreuer finden</h2>
+      </div>
+      <div class="mb-5">
+        <label class="form-label">Anforderungen</label>
+        <div formArrayName="anforderungen" class="checkbox-group">
+          <label *ngFor="let v of anforderungenFormArray.controls; let i = index">
+            <input type="checkbox" [formControlName]="i">
+            {{ Object.values(anforderungen)[i] }}
+          </label>
+        </div>
+      </div>
+      <div class="mb-5">
+        <label class="form-label">Fachgebiete</label>
+        <input class="form-control" formControlName="fachgebiete">
+      </div>
+      <div class="mb-5">
+        <button class="btn btn-primary" type="submit">suchen</button>
+      </div>
+    </form>
+  </section>
+  <section id="suchergebnis-section" class="border-g">
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Betreuer</th>
+            <th>Themen</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of betreuer">
+            <td><a [routerLink]="['/details/person']" [queryParams]="{ person: p | json }">{{p.name}}</a></td>
+            <td>{{p.themen.length}}</td>
+            <td>{{p.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</div>

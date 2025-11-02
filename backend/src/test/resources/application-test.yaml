@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: test
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update   # "create", "update", "validate" oder "none"
+    show-sql: false       # zeigt SQL im Terminal
+    properties:
+      hibernate:
+        format_sql: true # schön formatierte SQL-Ausgabe
+  h2:
+    console:
+      enabled: true      # H2-Webkonsole aktivieren
+      path: /h2-console  # erreichbar unter http://localhost:8080/h2-console
+  application:
+    name: game-of-advisors
+server:
+  port: 18736
+
+dummy-db: false

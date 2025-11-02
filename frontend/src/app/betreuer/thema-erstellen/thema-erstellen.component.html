@@ -1,0 +1,63 @@
+<div id="form-container" class="border-b">
+  <!-- TODO validierung einbauen -->
+  <form id="thema-erstellen-form" class="form border-g"
+        [formGroup]="themaForm" (ngSubmit)="postThema()">
+    <div class="mb-3">
+      <h2>Thema erstellen</h2>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Titel</label>
+      <input class="form-control" formControlName="titel">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Beschreibung</label>
+      <textarea class="form-control" rows="3" formControlName="beschreibung"></textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Anforderungen</label>
+      <div formArrayName="anforderungen" class="checkbox-group">
+        <label *ngFor="let v of anforderungenFormArray.controls; let i = index">
+          <input type="checkbox" [formControlName]="i">
+          {{ Object.values(anforderungen)[i] }}
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Fachgebiete</label>
+      <input class="form-control" formControlName="fachgebiete" placeholder="AI, funktionale Programmierung, ...">
+    </div>
+    <form [formGroup]="linkForm" class="form border-g">
+      <div *ngIf="hinzugefuegteLinks.length > 0">
+        <p>Hinzugefügte Links:</p>
+        <ul>
+          <li *ngFor="let link of hinzugefuegteLinks">Url: {{link.url}} - Anzeigename: {{link.text}}</li>
+        </ul>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Url</label>
+        <input type="text" class="form-control" placeholder="www.google.com" formControlName="url">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Anzeigename</label>
+        <input type="text" class="form-control" formControlName="text">
+      </div>
+      <button class="btn btn-primary" type="button" (click)="linkHinzufuegen()">hinzufügen</button>
+    </form>
+    <button type="submit">Thema erstellen</button>
+  </form>
+  <!-- TODO später implementieren
+  <form class="form">
+    <div>
+      <p>Hinzugefügte Dateien:</p>
+      <ul>
+        <li>Datei 1</li>
+      </ul>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Datei auswählen</label>
+      <input class="form-control" placeholder="www.google.com">
+    </div>
+    <button class="btn btn-primary">hinzufügen</button>
+  </form>
+  -->
+</div>

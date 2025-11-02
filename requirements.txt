@@ -1,0 +1,9 @@
+REQ-0001: Studierende können Profile von gelisteten Profile anschauen DONE
+REQ-0002: Themen können in einer Übersicht angezeigt werden DONE
+REQ-0003: Themen und Personen können bei Suchanfragen gefiltert werden
+REQ-0004: Die Suche wird durch einen Matching-Algorithmus unterstützt
+REQ-0004a: Der Matching-Algorithmus berücksichtigt Anforderungen für die Themen
+REQ-0005: Authentifizierung erfolgt über Github OAuth
+REQ-0005a: Es gibt drei Rollen: Student, Betreuer, Admin
+REQ-0005b: Das Hinzufügen einer neuen Person mit Admin-Rolle soll keine Neukompilation von Java-Dateien der Anwendung erfordern, ein Neustart mit geänderter Konfigurationsdatei ist aber ok.
+REQ-0005c: Die Rolle Betreuende wird von Personen mit Admin-Rechten vergeben und darf keinen Neustart der Anwendung erfordern.

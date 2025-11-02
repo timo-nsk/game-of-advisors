@@ -1,0 +1,44 @@
+#dashboard-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#person-suche-nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.suche-container {
+  min-width: 400px;
+  width: 30%;
+  margin: 20px;
+}
+
+.suche {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  width: 100%;
+}
+
+.suche-input {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  width: 100%;
+}
+
+.suche-btn {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 200px;
+}
+
+.suche-btn:hover {
+  cursor: pointer;
+}

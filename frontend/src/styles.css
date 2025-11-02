@@ -1,0 +1,43 @@
+/* You can add global styles to this file, and also import other style files */
+
+.border-r {
+  border: 1px solid red;
+  padding: 1px;
+  margin: 1px;
+}
+.border-b {
+  border: 1px solid blue;
+  padding: 1px;
+  margin: 1px;
+}
+
+.border-g {
+  border: 1px solid green;
+  padding: 1px;
+  margin: 1px;
+}
+
+html {
+  font-family: "Lato", sans-serif ;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+header {
+  background-color: #f1f1f1;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}

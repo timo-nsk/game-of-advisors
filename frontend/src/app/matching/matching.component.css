@@ -1,0 +1,8 @@
+#matching-form-section {
+  display: flex;
+  justify-content: center;
+}
+
+#matching-form {
+  width: 700px;
+}
