@@ -1,12 +1,13 @@
 <div id="dashboard-container">
-  <section id="person-suche-container" class="suche-container border-b">
-    <div id="person-suche-nav-container" class=" border-g">
+  <section id="person-suche-container" class="suche-container">
+    <div id="person-suche-nav-container">
       <form class="suche">
         <input class="suche-input" placeholder="Nach Person suchen...">
         <button class="suche-btn" type="button">suchen</button>
       </form>
     </div>
-    <div id="person-container" class="border-g">
+    <div id="person-container">
+      <h2>Betreuer</h2>
       <ul>
         <li *ngFor="let p of personen">
           <a [routerLink]="['/details/person']" [queryParams]="{ person: p | json }">{{p.name}}</a>
@@ -15,14 +16,15 @@
     </div>
   </section>
 
-  <section id="thema-suche-container" class="suche-container border-b">
-    <div id="thema-suche-nav-container" class="border-g">
+  <section id="thema-suche-container" class="suche-container">
+    <div id="thema-suche-nav-container">
       <form class="suche">
         <input class="suche-input" placeholder="Nach Themen suchen...">
         <button class="suche-btn" type="button">suchen</button>
       </form>
     </div>
-    <div id="thema-container" class="border-g">
+    <div id="thema-container">
+      <h2>Verfügbare Themen</h2>
       <ul>
         <li *ngFor="let t of themen">
           <a [routerLink]="['/details/thema']" [queryParams]="{ thema: t | json }">{{t.titel}}</a>

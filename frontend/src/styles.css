@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #1b5fec;
+  --secondary-color: #447bea
+}
 
 .border-r {
   border: 1px solid red;
