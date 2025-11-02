@@ -10,7 +10,7 @@ spring:
     show-sql: false       # zeigt SQL im Terminal
     properties:
       hibernate:
-        format_sql: true # schön formatierte SQL-Ausgabe
+        format_sql: true # schï¿½n formatierte SQL-Ausgabe
   h2:
     console:
       enabled: true      # H2-Webkonsole aktivieren
@@ -22,4 +22,4 @@ server:
 
 dummy-data:
   enable: true
-  sample-size: 30
+  sample-size: 10
