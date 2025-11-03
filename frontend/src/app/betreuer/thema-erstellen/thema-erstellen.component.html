@@ -15,11 +15,13 @@
     </div>
     <div class="mb-3">
       <label class="form-label">Anforderungen</label>
-      <div formArrayName="anforderungen" class="checkbox-group">
-        <label *ngFor="let v of anforderungenFormArray.controls; let i = index">
-          <input type="checkbox" [formControlName]="i">
-          {{ Object.values(anforderungen)[i] }}
-        </label>
+      <div id="anforderungen-container"  formArrayName="anforderungen" class="checkbox-group">
+        <div [classList]="'anforderung-item'" *ngFor="let v of anforderungenFormArray.controls; let i = index">
+          <label>
+            <input type="checkbox" [formControlName]="i">
+            {{ Object.values(anforderungen)[i] }}
+          </label>
+        </div>
       </div>
     </div>
     <div class="mb-3">

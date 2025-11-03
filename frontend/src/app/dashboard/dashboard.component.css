@@ -40,6 +40,7 @@
 }
 
 .suche-btn {
+  background-color: var(--accent-color);
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   width: 200px;
@@ -61,4 +62,8 @@ a {
 a:hover {
   cursor: pointer;
   color: var(--primary-color);
+}
+
+input {
+  padding-left: 20px;
 }

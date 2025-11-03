@@ -9,7 +9,10 @@ public enum Veranstaltung {
 	COMPILERBAU("Compilerbau"),
 	PROGRAMMIERUNG("Programmierung"),
 	RECHNERARCHITEKTUR("Rechnerarchitektur"),
-	ALGORITHMEN_UND_DATENSTRUKTUREN("Algorithmen und Datenstrukturen");
+	ALGORITHMEN_UND_DATENSTRUKTUREN("Algorithmen und Datenstrukturen"),
+	MATHEMATIK_FÜR_INFORMATIKER_1("Mathematik für Informatiker 1"),
+	MATHEMATIK_FÜR_INFORMATIKER_2("Mathematik für Informatiker 2"),
+	MATHEMATIK_FÜR_INFORMATIKER_3("Mathematik für Informatiker 3");
 
 	private final String displayName;
 

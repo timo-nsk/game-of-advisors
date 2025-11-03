@@ -9,6 +9,15 @@
   margin-bottom: 100px;
 }
 
+#anforderungen-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.anforderung-item {
+  margin: 8px;
+}
+
 .form {
   width: 700px;
 }
