@@ -9,9 +9,11 @@
     <div id="person-container">
       <h2>Betreuer</h2>
       <ul>
-        <li *ngFor="let p of personen">
-          <a [routerLink]="['/details/person']" [queryParams]="{ person: p | json }">{{p.name}}</a>
-        </li>
+        @for (p of personen; track p.id) {
+          <li>
+            <a [routerLink]="['/details/person']" [queryParams]="{ person: p | json }">{{p.name}}</a>
+          </li>
+        }
       </ul>
     </div>
   </section>
@@ -26,9 +28,11 @@
     <div id="thema-container">
       <h2>Verfügbare Themen</h2>
       <ul>
-        <li *ngFor="let t of themen">
-          <a [routerLink]="['/details/thema']" [queryParams]="{ thema: t | json }">{{t.titel}}</a>
-        </li>
+        @for (t of themen; track t.id) {
+          <li>
+            <a [routerLink]="['/details/thema']" [queryParams]="{ thema: t | json }">{{t.titel}}</a>
+          </li>
+        }
       </ul>
     </div>
   </section>
