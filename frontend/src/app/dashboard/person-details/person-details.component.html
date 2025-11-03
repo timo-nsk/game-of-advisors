@@ -4,28 +4,35 @@
   <p>Meine Fachgebiete: <span>{{getFachgebieteString()}}</span></p>
   <p>Themen:</p>
   <ul>
-    <li *ngFor="let thema of person.themen">
-      <p>Titel: {{thema.titel}}</p>
-      <p>Beschreibung: {{thema.beschreibung}}</p>
-      <p>Fachgebiete: <span>{{getThemenFachgebiete()}}</span></p>
-      <ng-container *ngIf="thema.links && thema.links.length > 0">
-        <ul>
-          <li *ngFor="let l of thema.links">
-            <!-- TODOD FIX wird nciht angezeigt, kp warum-->
-            <a [href]="[l.url]">{{l.text}}</a>
-          </li>
-        </ul>
-      </ng-container>
-      <ng-container *ngIf="thema.dateien && thema.dateien.length > 0">
-        <p>Dateien:</p>
-        <ul>
-          <!-- TODO muss ein anklickbarer Download sein -->
-          <li *ngFor="let d of thema.dateien">
-            <p>{{d.titel}} - {{d.beschreibung}}</p>
-          </li>
-        </ul>
-      </ng-container>
-    </li>
+    @for (thema of person.themen; track thema.id) {
+      <li>
+        <p>Titel: {{thema.titel}}</p>
+        <p>Beschreibung: {{thema.beschreibung}}</p>
+        <p>Fachgebiete: <span>{{getThemenFachgebiete()}}</span></p>
+
+        @if (thema.links && thema.links.length > 0) {
+          <ul>
+            @for (l of thema.links; track l.id) {
+              <li>
+                <a [href]="[l.url]">{{l.text}}</a>
+              </li>
+            }
+          </ul>
+        }
+
+        @if (thema.dateien && thema.dateien.length > 0) {
+          <p>Dateien:</p>
+          <ul>
+            <!-- TODO muss ein anklickbarer Download sein -->
+            @for (d of thema.dateien; track d.id) {
+              <li>
+                <p>{{d.titel}} - {{d.beschreibung}}</p>
+              </li>
+            }
+          </ul>
+        }
+      </li>
+    }
   </ul>
   <a [routerLink]="['/home']">zurück</a>
 </div>
