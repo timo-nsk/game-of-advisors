@@ -16,12 +16,14 @@
     <div class="mb-3">
       <label class="form-label">Anforderungen</label>
       <div id="anforderungen-container"  formArrayName="anforderungen" class="checkbox-group">
-        <div [classList]="'anforderung-item'" *ngFor="let v of anforderungenFormArray.controls; let i = index">
-          <label>
-            <input type="checkbox" [formControlName]="i">
-            {{ Object.values(anforderungen)[i] }}
-          </label>
-        </div>
+        @for (v of anforderungenFormArray.controls; track v.value) {
+          <div [classList]="'anforderung-item'">
+            <label>
+              <input type="checkbox" [formControlName]="$index">
+              {{ Object.values(anforderungen)[$index] }}
+            </label>
+          </div>
+        }
       </div>
     </div>
     <div class="mb-3">
@@ -29,12 +31,12 @@
       <input class="form-control" formControlName="fachgebiete" placeholder="AI, funktionale Programmierung, ...">
     </div>
     <form [formGroup]="linkForm" class="form border-g">
-      <div *ngIf="hinzugefuegteLinks.length > 0">
+      @if (hinzugefuegteLinks.length > 0) {
         <p>Hinzugefügte Links:</p>
         <ul>
           <li *ngFor="let link of hinzugefuegteLinks">Url: {{link.url}} - Anzeigename: {{link.text}}</li>
         </ul>
-      </div>
+      }
       <div class="mb-3">
         <label class="form-label">Url</label>
         <input type="text" class="form-control" placeholder="www.google.com" formControlName="url">
