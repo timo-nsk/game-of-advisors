@@ -3,22 +3,29 @@
   <p>Beschreibung: <span>{{thema.beschreibung}}</span></p>
   <p>Fachgebiete: <span>{{getFachgebieteString()}}</span></p>
   <p>Anforderungen: <span>{{getAnforderungenString()}}</span></p>
-  <ng-container *ngIf="hatDateien">
+
+  @if (hatDateien) {
     <p>Dateien:</p>
     <ul>
-      <li *ngFor="let d of thema.dateien">
-        <!-- TODO es muss ein downloadlink gerendert werden, der im backend den filestranfser anstoßt -->
-        <p>{{d.titel}}</p>
-      </li>
+      @for (d of thema.dateien; track d.id) {
+        <li *ngFor="let d of thema.dateien">
+          <!-- TODO es muss ein downloadlink gerendert werden, der im backend den filestranfser anstoßt -->
+          <p>{{d.titel}}</p>
+        </li>
+      }
     </ul>
-  </ng-container>
-  <ng-container *ngIf="hatLinks">
+  }
+
+  @if (hatLinks) {
     <p>Links:</p>
     <ul>
-      <li *ngFor="let l of thema.links">
-        <a [href]="[l.url]">{{l.text}}</a>
-      </li>
+      @for (l of thema.links; track l.id) {
+        <li>
+          <a [href]="[l.url]">{{l.text}}</a>
+        </li>
+      }
     </ul>
-  </ng-container>
+  }
+
   <a [routerLink]="['/home']">zurück</a>
 </div>
