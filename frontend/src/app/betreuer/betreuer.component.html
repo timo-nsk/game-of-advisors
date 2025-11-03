@@ -1,9 +1,11 @@
 <div>
   <p>Meine Themen</p>
   <ul>
-    <li *ngFor="let t of betreuerThemen">
-      <a [routerLink]="['/details/thema']" [queryParams]="{ thema: t | json }">{{t.titel}}</a>
-    </li>
+    @for (t of betreuerThemen; track t.id) {
+      <li>
+        <a [routerLink]="['/details/thema']" [queryParams]="{ thema: t | json }">{{t.titel}}</a>
+      </li>
+    }
   </ul>
   <a [routerLink]="['/thema/erstellen']">Thema erstellen</a>
 </div>
