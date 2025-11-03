@@ -7,10 +7,12 @@
       <div class="mb-5">
         <label class="form-label">Anforderungen</label>
         <div formArrayName="anforderungen" class="checkbox-group">
-          <label *ngFor="let v of anforderungenFormArray.controls; let i = index">
-            <input type="checkbox" [formControlName]="i">
-            {{ Object.values(anforderungen)[i] }}
-          </label>
+          @for (v of anforderungenFormArray.controls; track v.value) {
+            <label>
+              <input type="checkbox" [formControlName]="$index">
+              {{ Object.values(anforderungen)[$index] }}
+            </label>
+          }
         </div>
       </div>
       <div class="mb-5">
@@ -33,11 +35,13 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let p of betreuer">
-            <td><a [routerLink]="['/details/person']" [queryParams]="{ person: p | json }">{{p.name}}</a></td>
-            <td>{{p.themen.length}}</td>
-            <td>{{p.email}}</td>
-          </tr>
+          @for (p of betreuer; track p.id) {
+            <tr>
+              <td><a [routerLink]="['/details/person']" [queryParams]="{ person: p | json }">{{p.name}}</a></td>
+              <td>{{p.themen.length}}</td>
+              <td>{{p.email}}</td>
+            </tr>
+          }
         </tbody>
       </table>
     </div>
